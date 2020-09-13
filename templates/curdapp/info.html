@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>List of Employees</h1>
+    <table border="3">
+      <th>Employee No</th>
+      <th>Employee Name</th>
+      <th>Employee Salary</th>
+      <th>Employee Address</th>
+      <th>Actions</th>
+      {% for emp in employees %}
+      <tr>
+        <td>{{emp.no}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.address}}</td>
+        <td><a href="/update/{{emp.id}}">Update</a> <a href="/delete/{{emp.id}}">Delete</a></td>
+        {% endfor %}
+      </tr>
+    </table>
+    <a class="btn btn-primary" href="/create" role="button">Insert New Employee</a>
+  </body>
+</html>
